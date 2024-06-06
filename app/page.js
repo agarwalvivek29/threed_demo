@@ -22,9 +22,9 @@ const Scene = () => {
       <PerspectiveCamera
         makeDefault
         fov={45}
-        // near={0.1}
-        far={1000}
-        position={[0, 0, 500]} // Adjust camera position as needed
+        near={0.01}
+        far={1000000}
+        position={[0, 0, 10]} // Adjust camera position as needed
         ref={cameraRef}
       />
       
@@ -56,7 +56,7 @@ export default Scene;
 
 const Model = () => {
   const modelRef = useRef();
-  const gltf = useLoader(GLTFLoader, '/secondGear.gltf'); // Path to your GLTF model file
+  const gltf = useLoader(GLTFLoader, '/gearAssembly.gltf'); // Path to your GLTF model file
 
   return (
     <group ref={modelRef}>
